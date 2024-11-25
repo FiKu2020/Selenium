@@ -26,3 +26,12 @@ try:
 finally:
     # driver.quit()
     print("jest git")
+    driver.quit()
+
+    def optimal_price():
+        wydajnosc_wszystkich_bud = []
+        for i in range(20):
+            cps_budynku = driver.execute_script(f'return Game.ObjectsById[{i}].storedCps')
+            cena_budynku = driver.execute_script(f"return Game.ObjectsById[{i}].price")
+            wydajnosc_danego_bud = cps_budynku / cena_budynku
+            wydajnosc_wszystkich_bud.append(wydajnosc_danego_bud)
